@@ -6,6 +6,9 @@ public class Student {
     private int fees;
     private String city;
 
+    public Student() {
+    }
+
     public Student(String fName, String lName, int rollNo, long mobileNo, int fees, String city) {
         this.fName = fName;
         this.lName = lName;
