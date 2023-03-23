@@ -7,5 +7,7 @@ public class StudentMain {
         operation.show();
         operation.update();
         operation.show();
+        operation.delete();
+        operation.show();
     }
 }

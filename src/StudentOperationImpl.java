@@ -36,48 +36,66 @@ public class StudentOperationImpl implements StudentOperation {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter a first name :: ");
     String firstName = sc.nextLine();
-    for (Student student : students){
-    if (firstName.equals(student.getfName())) {
-      System.out.println("Choose field you want to add:");
-      System.out.println("1.First Name 2.Last Name 3.Phone Number 4.roll no 5. city 6. fees");
-      int choice = sc.nextInt();
-      switch (choice) {
-        case 1:
-          System.out.println("Re-Correct your firstname");
-          student.setfName(sc.next());
-          break;
-        case 2:
-          System.out.println("Re-correct your Lastname");
-          student.setlName(sc.next());
-          break;
-        case 3:
-          System.out.println("Re-Correct your Phone Number");
-          student.setMobileNo(sc.nextLong());
-          break;
-        case 4:
-          System.out.println("Re-Correct your roll-no");
-          student.setRollNo(sc.nextInt());
-          break;
-        case 5:
-          System.out.println("Re-Correct your City");
-          student.setCity(sc.next());
-          break;
-        case 6:
-          System.out.println("Re-Correct your fees");
-          student.setFees(sc.nextInt());
-          break;
+    for (Student student : students) {
+      if (firstName.equals(student.getfName())) {
+        System.out.println("Choose field you want to add:");
+        System.out.println("1.First Name 2.Last Name 3.Phone Number 4.roll no 5. city 6. fees");
+        int choice = sc.nextInt();
+        switch (choice) {
+          case 1:
+            System.out.println("Re-Correct your firstname");
+            student.setfName(sc.next());
+            break;
+          case 2:
+            System.out.println("Re-correct your Lastname");
+            student.setlName(sc.next());
+            break;
+          case 3:
+            System.out.println("Re-Correct your Phone Number");
+            student.setMobileNo(sc.nextLong());
+            break;
+          case 4:
+            System.out.println("Re-Correct your roll-no");
+            student.setRollNo(sc.nextInt());
+            break;
+          case 5:
+            System.out.println("Re-Correct your City");
+            student.setCity(sc.next());
+            break;
+          case 6:
+            System.out.println("Re-Correct your fees");
+            student.setFees(sc.nextInt());
+            break;
 
-        default:
-          System.out.println("Enter valid number");
+          default:
+            System.out.println("Enter valid number");
+        }
       }
-    }
     }
   }
 
   @Override
   public void show() {
-    for (Student s : students){
+    for (Student s : students) {
       System.out.println(s.getfName() + " " + s.getlName() + " " + s.getRollNo() + " " + s.getCity() + " " + s.getFees() + " " + s.getMobileNo());
+    }
+  }
+
+  @Override
+  public void delete() {
+    boolean flag = false;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a first name :: ");
+    String firstName = sc.nextLine();
+    for (int i = 0; i < students.size(); i++){
+      Student student1 = students.get(i);
+      if(firstName.equals(student1.getfName())){
+        flag = true;
+        students.remove(student1);
+      }
+    }
+    if (flag == false){
+      System.out.println("Entered contact not found");
     }
   }
 }
