@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+
 public class StudentMain {
     public static void main(String[] args) {
         System.out.println("Welcome to student management system");
+        StudentOperationImpl operation = new StudentOperationImpl();
+        operation.add();
     }
 }
