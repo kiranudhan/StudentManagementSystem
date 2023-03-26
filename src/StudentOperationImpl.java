@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class StudentOperationImpl implements StudentOperation {
   ArrayList<Student> students = new ArrayList<>();
@@ -98,6 +101,28 @@ public class StudentOperationImpl implements StudentOperation {
       System.out.println("Entered contact not found");
     }
   }
+
+  @Override
+  public void filterByFees() {
+   students.stream().filter(fees -> student.getFees() > 2000).map(n -> n.getfName()).forEach(System.out::println);
+  }
+
+
+  public void nameofMinStudentFees() {
+    Optional<String> nameOfMinFees = students.stream()
+            .min((stud1, stud2) -> stud1.getFees() > stud2.getFees() ? 1 : -1)
+            .map(student -> student.getfName());
+    System.out.println(nameOfMinFees);
+  }
+
+
+
+
+
+
+
+
 }
+
 
 

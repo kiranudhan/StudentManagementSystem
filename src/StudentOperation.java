@@ -3,4 +3,7 @@ public interface StudentOperation {
     void update();
     void show();
     void delete();
+
+    void filterByFees();
+
 }

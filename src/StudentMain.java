@@ -5,9 +5,11 @@ public class StudentMain {
         StudentOperationImpl operation = new StudentOperationImpl();
         operation.add();
         operation.show();
-        operation.update();
-        operation.show();
-        operation.delete();
-        operation.show();
+//        operation.update();
+//        operation.show();
+//        operation.delete();
+//        operation.show();
+        operation.nameofMinStudentFees();
+        operation.filterByFees();
     }
 }
