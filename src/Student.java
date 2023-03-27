@@ -65,4 +65,16 @@ public class Student {
     public void setCity(String city) {
         this.city = city;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", rollNo=" + rollNo +
+                ", mobileNo=" + mobileNo +
+                ", fees=" + fees +
+                ", city='" + city + '\'' +
+                '}';
+    }
 }

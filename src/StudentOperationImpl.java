@@ -108,6 +108,11 @@ public class StudentOperationImpl implements StudentOperation {
   }
 
 
+  public void SortingByCityName(){
+    students.sort((s1,s2) -> s1.getCity().compareToIgnoreCase(s2.getCity()));
+    students.forEach(System.out::println);
+  }
+
   public void nameofMinStudentFees() {
     Optional<String> nameOfMinFees = students.stream()
             .min((stud1, stud2) -> stud1.getFees() > stud2.getFees() ? 1 : -1)

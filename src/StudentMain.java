@@ -11,5 +11,6 @@ public class StudentMain {
 //        operation.show();
         operation.nameofMinStudentFees();
         operation.filterByFees();
+        operation.SortingByCityName();
     }
 }

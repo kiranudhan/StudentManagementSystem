@@ -5,5 +5,5 @@ public interface StudentOperation {
     void delete();
 
     void filterByFees();
-
+    void SortingByCityName();
 }
