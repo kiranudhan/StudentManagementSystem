@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StudentOperationImpl implements StudentOperation {
@@ -113,6 +110,7 @@ public class StudentOperationImpl implements StudentOperation {
     students.forEach(System.out::println);
   }
 
+
   public void nameofMinStudentFees() {
     Optional<String> nameOfMinFees = students.stream()
             .min((stud1, stud2) -> stud1.getFees() > stud2.getFees() ? 1 : -1)
@@ -120,13 +118,15 @@ public class StudentOperationImpl implements StudentOperation {
     System.out.println(nameOfMinFees);
   }
 
+  public void minFeesOfStudent(){
+    Optional<Integer> min = students.stream().min(Comparator.comparing(Student::getFees)).map(student1 -> student1.getFees());
+    System.out.println("Minimum fees of student :: " + min.get());
+  }
 
-
-
-
-
-
-
+  public void maxFeesOfStudent(){
+   Optional<Integer> max = students.stream().max(Comparator.comparing(Student::getFees)).map(s -> s.getFees());
+    System.out.println("Maximum fees of student :: " + max.get());
+  }
 }
 
 
