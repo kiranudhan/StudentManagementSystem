@@ -14,5 +14,7 @@ public class StudentMain {
         operation.SortingByCityName();
         operation.minFeesOfStudent();
         operation.maxFeesOfStudent();
+        operation.countOfStudent();
+        operation.distinctCity();
     }
 }

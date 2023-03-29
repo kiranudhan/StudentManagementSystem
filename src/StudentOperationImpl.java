@@ -127,6 +127,16 @@ public class StudentOperationImpl implements StudentOperation {
    Optional<Integer> max = students.stream().max(Comparator.comparing(Student::getFees)).map(s -> s.getFees());
     System.out.println("Maximum fees of student :: " + max.get());
   }
+
+  public void countOfStudent(){
+    long count = students.stream().count();
+    System.out.println("Number of student :: " + count);
+  }
+
+  public void distinctCity(){
+    List<String> strings= students.stream().map(s -> s.getCity()).distinct().collect(Collectors.toList());
+    System.out.println("Distinct city :: " + strings);
+  }
 }
 
 
